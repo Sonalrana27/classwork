@@ -4,7 +4,7 @@ public class blackbirds
 public static void main(String[] args)
 {
 int birdpie=0;
-for(int i=0;i<20;i++)
+for(int i=1;i<24;i++)//changed no. count to 24 starting from 1
 {
 System.out.println("birds"+i+"goes into pie");
 birdpie++;
