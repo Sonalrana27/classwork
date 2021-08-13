@@ -68,6 +68,7 @@ System.out.println("play more y/n"+playmore);
 if(playmore=="y")
 {
 System.out.println(+turn);
+
 }
 else
 {
