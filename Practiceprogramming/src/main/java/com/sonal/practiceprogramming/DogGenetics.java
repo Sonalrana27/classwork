@@ -1,12 +1,12 @@
 package com.sonal.practiceprogramming;
-import java.util.Scanner;
+import java.util.Random;
 public class DogGenetics
 {
 public static void main(String[] args)
 {
 System.out.println("what type of information you want press number ");
-Scanner sc=new Scanner(System.in);
-int dognumber=sc.nextInt();
+Random rm=new Random();
+int dognumber=rm.nextInt(5);
 
 System.out.println("well,i have this highly reliable report on "+dognumber+ "prestigious background right there");
 
