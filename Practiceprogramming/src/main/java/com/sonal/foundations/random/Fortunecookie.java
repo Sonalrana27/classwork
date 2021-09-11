@@ -4,6 +4,7 @@ public class Fortunecookie
 {
 public static void main(String[] args)
 {
+
 Random rm=new Random();
 int x=rm.nextInt(10);
 System.out.println("this is your greek"+x);
