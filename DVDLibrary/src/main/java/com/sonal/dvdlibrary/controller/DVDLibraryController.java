@@ -3,34 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sonal.dvd;
-
+package com.sonal.dvdlibrary.controller;
+import com.sonal.dvdlibrary.ui.DVDLibraryView;
+import com.sonal.dvdlibrary.dao.DVDLibraryDao;
+import com.sonal.dvdlibrary.ui.UserIO;
+import com.sonal.dvdlibrary.ui.UserIOConsoleImpl;
+import com.sonal.dvdlibrary.dao.DVDLibraryDaoFileImpl;
+import com.sonal.dvdlibrary.dto.DVD;
 import java.util.List;
+
 
 /**
  *
  * @author Sonal Rana
  */
-public class DVDController {
-   private DVDView view=new DVDView();
-   private DVDIO dao=new DVDuserIOImpl() {};
- private USerIO io =  new userIOImpl();
+public class DVDLibraryController {
+    private DVDLibraryView view=new DVDLibraryView();
+   private DVDLibraryDao dao=new DVDLibraryDaoFileImpl() {};
+ private UserIO io =  new UserIOConsoleImpl();
  private void createDVD() {
     view.displayCreateDVDBanner();
-    DVDDto newDVD = view.getNewDVDInfo();
+    DVD newDVD = view.getNewDVDInfo();
     dao.addDVD(newDVD.getTitle(), newDVD);
     view.displayCreateSuccessBanner();
 }
  private void listDVD() {
     view.displayDisplayAllBanner();
-    List<DVDDto> DVDList = dao.getallDVDDto();
+    List<DVD> DVDList = dao.getallDVD();
     view.displayDVDList(DVDList);
 }
  private void viewDVD()
  {
      view.displayDisplayDVDBanner ();
      String title=view.getDVDChoice();
-   DVDDto vd=dao.getDVD(title);
+   DVD vd=dao.getDVD(title);
     view.displayDVD(vd);
  
  
@@ -38,13 +44,13 @@ public class DVDController {
  private void removeDVD() {
     view.displayRemoveDVDBanner();
     String title= view.getDVDChoice();
-    DVDDto removeddvd= dao.removeDVD(title);
+    DVD removeddvd= dao.removeDVD(title);
     view.displayRemoveDVD(removeddvd);
 }
  private void editDVD() {
     view.displayeditDVD();
     String title= view.getDVDChoice();
-    DVDDto editeddvd= dao.editDVD(title);
+    DVD editeddvd= dao.editDVD(title);
     view.displayEditDVD(editeddvd);
             }
  private void unknownCommand() {
@@ -95,4 +101,6 @@ private void exitMessage() {
 
         }
         exitMessage();
-    }}
+    }
+    
+}
