@@ -16,11 +16,20 @@ import java.util.Scanner;
  * @author Sonal Rana
  */
 public class DVDLibraryDaoException {
-    public static void main(String[] args) throws Exception
+    public class Exception extends Throwable
     {
+        public DVDLibraryDaoException(String message)
+        {
+            super(message);
+        }
+        public DVDLibraryDaoException(String message,Throwable cause)
+        {
+            super(message,cause);
+        }
+    }
         
     
-    PrintWriter out=new PrintWriter(new FileWriter("outFile.txt"));
+    /*PrintWriter out=new PrintWriter(new FileWriter("outFile.txt"));
          out.println("everthing saved in file");
          out.flush();
          out.close();
