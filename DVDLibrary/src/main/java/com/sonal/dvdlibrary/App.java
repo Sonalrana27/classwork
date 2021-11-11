@@ -7,7 +7,7 @@ package com.sonal.dvdlibrary;
 
 import com.sonal.dvdlibrary.controller.DVDLibraryController;
 
-import java.util.Scanner;
+import com.sonal.dvdlibrary.dao.DVDLibraryDao;
 
 /**
  *
@@ -17,8 +17,11 @@ import java.util.Scanner;
 public class App {
     
     public static void main(String[] args) {
+         UserIO myIO=new UserIOConsoleImpl();
+        DVDLibraryView myView= DVDLibraryView(myIO);
+         DVDLibraryDao myDao=new DVDLibrarydaoFileImpl();
          
-                 DVDLibraryController controller= new DVDLibraryController();
+                 DVDLibraryController controller= new DVDLibraryController(myDao,myView);
         controller.run();
     }
     

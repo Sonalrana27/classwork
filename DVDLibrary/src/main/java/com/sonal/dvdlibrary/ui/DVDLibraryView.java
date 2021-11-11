@@ -16,7 +16,11 @@ import java.util.Scanner;
 public class DVDLibraryView {
     Scanner sc=new Scanner(System.in);
     
-    private UserIO io = new UserIOConsoleImpl();
+    private UserIO io;
+    public DVDLibraryView(UserIO io)
+    {
+        this.io=io;
+    }
     
 
     public int printMenuAndGetSelection() {

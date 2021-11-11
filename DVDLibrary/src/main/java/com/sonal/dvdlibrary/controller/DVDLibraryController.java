@@ -18,8 +18,13 @@ import java.util.List;
  * @author Sonal Rana
  */
 public class DVDLibraryController {
-    private DVDLibraryView view=new DVDLibraryView();
-   private DVDLibraryDao dao=new DVDLibraryDaoFileImpl() {};
+    private DVDLibraryView view;
+   private DVDLibraryDao dao;
+   public DVDLibraryController(DVDLibraryDao dao,DVDLibraryView view)
+   {
+       this.dao=dao;
+       this.view=view;
+   }
  private UserIO io =  new UserIOConsoleImpl();
  private void createDVD() {
     view.displayCreateDVDBanner();
